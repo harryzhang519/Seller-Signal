@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Signal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+
+    <!-- 1. Header -->
+    <header>
+      <p class="eyebrow">Concept demo · fake data</p>
+      <h1>Seller Signal</h1>
+      <p class="intro">
+        Ranks an agent's own CRM contacts by how timely a conversation about selling might be.
+        Every score comes from simple, readable rules and a neutral one-line reason.
+      </p>
+    </header>
+
+    <!-- 2. Scored contacts table (rows are filled in by app.js) -->
+    <section>
+      <h2>Contacts, ranked by score</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Contact</th>
+              <th>Score</th>
+              <th>Why</th>
+              <th>Years owned</th>
+              <th>Equity gain</th>
+              <th>Last contact</th>
+            </tr>
+          </thead>
+          <tbody id="contacts-body"></tbody>
+        </table>
+      </div>
+      <p class="legend">
+        <span class="tag tag-shark">Shark Tank</span> score 50+ but untouched 12+ months, could be offered to the lead pool.
+        <span class="tag tag-opted">Opted out</span> excluded from scoring and outreach.
+      </p>
+    </section>
+
+    <!-- 3. AI outreach drafts for the top 5 -->
+    <section>
+      <h2>Outreach drafts for the top 5</h2>
+      <p>Short, friendly first messages. The AI only sees a first name and the neutral reason, never equity figures or notes.</p>
+      <button id="draft-btn">Draft outreach for top 5</button>
+      <p id="draft-status" class="status"></p>
+      <div id="outreach-list"></div>
+    </section>
+
+    <!-- 4. How scoring works (rule list is filled in from SCORING_RULES by app.js) -->
+    <section>
+      <h2>How scoring works</h2>
+      <p>Each contact starts at 0. Points are added or subtracted for each rule that applies, and the total is kept between 0 and 100.</p>
+      <table class="rules-table">
+        <thead><tr><th>Rule</th><th>Points</th></tr></thead>
+        <tbody id="rules-body"></tbody>
+      </table>
+    </section>
+
+    <!-- 5. Fair Housing and privacy -->
+    <section class="note">
+      <h2>What's excluded, and why</h2>
+      <p>
+        Fair Housing law prohibits steering or targeting based on protected classes. Life-event signals can line up
+        with those classes, so this score never uses them as inputs:
+      </p>
+      <ul>
+        <li>Divorce, marriage, new baby, death in the family, or aging parents</li>
+        <li>Age, race, colour, religion, sex, national origin, familial status, or disability</li>
+        <li>Neighbourhood demographics, health information, or free-text agent notes</li>
+      </ul>
+      <p>
+        Also by design: only the agent's own contacts are scored (no purchased or scraped lists),
+        agents see a score and a neutral reason rather than raw data, and opted-out contacts are never scored or messaged.
+      </p>
+    </section>
+
+    <footer>
+      <p>All names and data are fictional. An unofficial concept demo, not an Indigo Stride product.</p>
+    </footer>
+
+  </main>
+
+  <!-- Order matters: data first, then the rules, then the code that uses both -->
+  <script src="data.js"></script>
+  <script src="scoring.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

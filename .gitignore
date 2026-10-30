@@ -1,0 +1,12 @@
+# Secrets: never upload API keys
+.env
+.env.*
+
+# Vercel CLI local settings
+.vercel
+
+# Editor and system junk
+.vscode/
+.DS_Store
+Thumbs.db
+node_modules/

@@ -1,0 +1,161 @@
+/* =====================================================================
+   BRAND COLOURS (Indigo Stride palette) - change the look here
+   ===================================================================== */
+:root {
+  /* Core */
+  --obsidian: #0B0B0F;   /* ink / primary text */
+  --ember: #E94E1B;      /* signal / accent */
+  --bone: #F4F1EB;       /* ground / page canvas */
+
+  /* Warm gray scale */
+  --paper: #FAFAF7;      /* 01 cards */
+  --mist: #E7E4DD;       /* 02 borders, light fills */
+  --limestone: #D8D3C6;  /* 03 */
+  --fog: #C9C4BA;        /* 04 */
+  --smoke: #6E6A61;      /* 05 secondary text */
+  --graphite: #2B2A27;   /* 06 */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--obsidian);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 16px 48px;
+}
+
+/* =====================================================================
+   HEADER AND SECTIONS
+   ===================================================================== */
+header {
+  border-bottom: 1px solid var(--obsidian);
+  padding-bottom: 24px;
+}
+
+/* Small spaced-out capitals, like the labels on the brand sheet */
+.eyebrow {
+  margin: 0;
+  color: var(--smoke);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+h1 { margin: 8px 0 8px; font-size: 2.6rem; font-weight: 700; letter-spacing: -0.03em; }
+h2 { margin: 0 0 12px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.intro { margin: 0; color: var(--graphite); max-width: 640px; }
+
+section {
+  background: var(--paper);
+  border: 1px solid var(--mist);
+  border-radius: 4px;
+  padding: 24px 20px;
+  margin-top: 24px;
+}
+
+.note { border-left: 4px solid var(--ember); }
+.note ul { padding-left: 20px; }
+
+footer { margin-top: 24px; color: var(--smoke); font-size: 0.85rem; text-align: center; }
+
+/* =====================================================================
+   TABLES
+   ===================================================================== */
+.table-wrap { overflow-x: auto; }   /* lets the table scroll sideways on phones */
+
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+
+th, td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--mist);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--smoke);
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+tr.opted-out td { color: var(--smoke); }
+
+.rules-table { max-width: 520px; }
+.points-plus { color: var(--obsidian); font-weight: 700; }
+.points-minus { color: var(--smoke); font-weight: 700; }
+
+/* =====================================================================
+   SCORE BADGES AND TAGS
+   ===================================================================== */
+.score {
+  display: inline-block;
+  min-width: 40px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-weight: 700;
+  text-align: center;
+}
+.score-high { color: var(--obsidian); background: var(--ember); }      /* 70 and up */
+.score-mid  { color: var(--obsidian); background: var(--limestone); }  /* 40 to 69 */
+.score-low  { color: var(--smoke);    background: var(--mist); }       /* under 40 */
+
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.tag-shark { color: var(--paper); background: var(--obsidian); }
+.tag-opted { color: var(--smoke); background: transparent; border: 1px solid var(--fog); }
+
+.legend { margin: 12px 0 0; color: var(--smoke); font-size: 0.85rem; }
+.legend .tag { margin-left: 0; }
+.legend .tag-opted { margin-left: 12px; }
+
+/* =====================================================================
+   OUTREACH BUTTON AND MESSAGE CARDS
+   ===================================================================== */
+button {
+  background: var(--obsidian);
+  color: var(--paper);
+  border: none;
+  border-radius: 4px;
+  padding: 11px 20px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: var(--ember); color: var(--obsidian); }
+button:disabled { opacity: 0.5; cursor: wait; }
+
+.status { color: var(--smoke); font-size: 0.85rem; min-height: 1.2em; }
+
+.outreach-card {
+  border: 1px solid var(--mist);
+  border-left: 3px solid var(--ember);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  background: var(--paper);
+}
+.outreach-card h3 { margin: 0 0 6px; font-size: 1rem; }
+.outreach-card p { margin: 0; }
+
+.source { font-size: 0.75rem; color: var(--smoke); font-weight: 400; margin-left: 6px; }
