@@ -15,7 +15,9 @@
 //   GEMINI_MODEL    - optional, defaults to the model below
 // =====================================================================
 
-const DEFAULT_MODEL = "gemini-2.5-flash";
+// A fast "lite" model: short messages don't need a heavy model, and the
+// bigger "thinking" models can take 30+ seconds to reply.
+const DEFAULT_MODEL = "gemini-3.5-flash-lite";
 const MAX_CONTACTS = 5; // cost guard: never draft more than 5 per request
 
 // Keep in sync with templateMessage() in app.js.
